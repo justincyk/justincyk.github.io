@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-###  `npm run build`
+###  `npm run deploy`
 
 Deploys the website (updates pages branch with the updated website)
 
