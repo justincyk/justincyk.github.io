@@ -1,10 +1,12 @@
 import React from "react"
 import './App.css';
+import Login from "./Login";
 
 function App() {
   return (
     <div className="app">
-      <h1>Hello there this is the start of the project</h1>
+      <h1>Tuffy's Trading Post</h1>
+      <Login />
     </div>
   );
 }
