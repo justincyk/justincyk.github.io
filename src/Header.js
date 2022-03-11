@@ -14,10 +14,10 @@ function Header(){
 
             <div className="header_nav">
                 <div className="header_option">
-                    <span className="signUp">Sign Up</span>
+                    <span className="signUp">Log In</span>
                 </div>
                 <div className="header_option">
-                    <span className="logIn">Log In</span>
+                    <span className="logIn">Profile</span>
                 </div>
                 <div className="header_option">
                     <span className="aboutUs">About Us</span>
