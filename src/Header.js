@@ -1,5 +1,4 @@
 import React from "react";
-import App from './App';
 import './Header.css'
 
 function Header(){
@@ -12,7 +11,7 @@ function Header(){
             <div className="header_search">
                 <input className="header_searchInput" type='text' placeholder="Search item" />
             </div>
-        
+
             <div className="header_nav">
                 <div className="header_option">
                     <span className="signUp">Sign Up</span>
@@ -20,7 +19,7 @@ function Header(){
                 <div className="header_option">
                     <span className="logIn">Log In</span>
                 </div>
-                <div className="header_option"> 
+                <div className="header_option">
                     <span className="aboutUs">About Us</span>
                 </div>
                 <div className="header_option">
@@ -32,3 +31,5 @@ function Header(){
         </div>
     );
 }
+
+export default Header

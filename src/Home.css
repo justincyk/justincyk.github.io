@@ -1,12 +1,16 @@
-.home_Container{
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    max-width: 1500px;
+.home_Container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.home_Row{
-    display: flex;
-    margin-left: 5px;
-    margin-right: 5px;
+.home_Row {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 2px solid;
+  margin-top: 20px;
 }
