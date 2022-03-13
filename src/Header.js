@@ -20,12 +20,18 @@ function Header(){
                   </div>
                 </Link>
 
+
                 <div className="header_option">
-                    <span className="profle">Profile</span>
+                    <span className="profile"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyautoplay=1" className="href">Profile</a></span>
                 </div>
+
+
+
                 <div className="header_option">
-                    <span className="aboutUs">About Us</span>
+                    <span className="aboutUs"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyautoplay=1" className="href">About Us</a></span>
                 </div>
+
+
                 <div className="header_option">
                     <span className="contactUs">Contact Us</span>
                 </div>
