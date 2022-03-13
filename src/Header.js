@@ -1,5 +1,6 @@
 import React from "react";
 import './Header.css'
+import { Link } from "react-router-dom";
 
 function Header(){
     return(
@@ -13,11 +14,14 @@ function Header(){
             </div>
 
             <div className="header_nav">
+                <Link to='/login'>
+                  <div className="header_option">
+                    <span className="log_in">Log in</span>
+                  </div>
+                </Link>
+
                 <div className="header_option">
-                    <span className="signUp">Log In</span>
-                </div>
-                <div className="header_option">
-                    <span className="logIn">Profile</span>
+                    <span className="profle">Profile</span>
                 </div>
                 <div className="header_option">
                     <span className="aboutUs">About Us</span>

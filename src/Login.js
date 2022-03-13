@@ -26,13 +26,13 @@ function Login() {
                 <button>Sign In</button>
                 <br/>
                 {/* links create account button to create account page */}
-                <Link to = "/createaccount">
+                <Link to = "/create_account">
                   <button>Create account</button>
                 </Link>
-                
+
             </form>
 
-            <p> 
+            <p>
                 test text
             </p>
             <Link to ="/">
@@ -49,4 +49,4 @@ export default Login
 
 //things to do
 // - button to create account
-// - 
+// -

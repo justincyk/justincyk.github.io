@@ -4,7 +4,8 @@ import Login from "./Login";
 import Header from "./Header";
 import Home from "./Home";
 import CreateAccount from "./CreateAccount";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 // 3/9/22 NOTES:
 // - installed react-router-dom, to install: npm install
@@ -13,15 +14,18 @@ import CreateAccount from "./CreateAccount";
 
 function App() {
   return (
-      <div className="app">
-          <Header/>
-          <Home />
-          {/* <Routes> */}
-            {/* Different pages based on the path. '/' is the base */}
-            {/* <Route path="/" element={[<Home/>]}/> */}
-          {/* </Routes> */}
-      </div>
-
+       // BEM
+    <Router>
+       <div className="app">
+         {/* Makes it so Header renders in each page regardless of location */}
+           <Routes>
+             {/* Different pages based on the path. '/' is the base */}
+             <Route path="/" element={[<Header/>,<Home/>]}/>
+             <Route path="/login" element={[<Login/>]}/>
+             <Route path="/create_account" element={[<CreateAccount/>]}/>
+           </Routes>
+       </div>
+     </Router>
 
   );
 }
