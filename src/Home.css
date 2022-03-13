@@ -1,6 +1,6 @@
 .home_Container {
-  /* background-color: #e17000; */
   display: flex;
+  background-color: rgb(241, 241, 241);
   flex-direction: column;
   align-content: center;
   width: 100%;
@@ -9,18 +9,23 @@
 }
 
 .home_Row {
+  background-color: white;
   display: flex;
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid;
   margin-top: 20px;
-  width: 50%;
+  margin-bottom: 10px;
+  width: 80%;
 }
 
 .homepage_image {
+  opacity: 1;
   display: block;
   align-content: center;
   margin-right: 10px;
   width: 100%;
+  /* z-index: -1; */
+  /* mask-image: linear-gradient(black, transparent); */
 }
