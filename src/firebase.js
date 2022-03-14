@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 //import { initializeApp } from 'firebase/app';
 import firebase from "firebase/compat/app";
