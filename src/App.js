@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // - installed react-router-dom, to install: npm install
 //   react-router-dom@5.2.0 and then npm install --save react-router-dom
 // - added routing to easily navigate throughout website
+//3/14/22 NOTES:
+// - installed: npm i web-vitals --save-dev to fix an error i got upon npm start
 
 function App() {
   return (
