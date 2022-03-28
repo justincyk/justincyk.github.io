@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from './firebase';
 
 function Login() {
+  const nav = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const signIn = e => {
     e.preventDefault();
+
+    auth
+        .signInWithEmailAndPassword(email, password)
+        .then(auth => {
+            nav('/')
+        })
+        .catch(error => alert(error.message))
   }
 
   return (
@@ -23,16 +32,16 @@ function Login() {
                 <h5>Password</h5>
                 <input type='password' value = {password} onChange = {e => setPassword(e.target.value)}/>
                 <br/>
-                <button>Sign In</button>
+                <button type='submit' onClick={signIn}>Sign In</button>
                 <br/>
                 {/* links create account button to create account page */}
-                <Link to = "/createaccount">
+                <Link to = "/create_account">
                   <button>Create account</button>
                 </Link>
-                
+
             </form>
 
-            <p> 
+            <p>
                 test text
             </p>
             <Link to ="/">
@@ -49,4 +58,4 @@ export default Login
 
 //things to do
 // - button to create account
-// - 
+// -
