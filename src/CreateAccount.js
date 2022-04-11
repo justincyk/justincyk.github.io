@@ -2,41 +2,74 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
-
+import './CreateAccount.css'
+import firebase from "firebase/compat/app";
+import database from "firebase/compat/app";
+import { getDatabase, ref, set } from "firebase/database";
+import { v4 as uuidv4 } from 'uuid';
+import { createCustomToken } from "firebase/auth";
 
 function CreateAccount() {
 
-    const history = useNavigate();
+    const nav = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [firstLastName, setfirstLastName] = useState('');
+    const [Username, setUsername] = useState('');  
+
+    const database = getDatabase();   
   
     const Register = e => {
       e.preventDefault();
 
-      auth
-          .createUserWithEmailAndPassword(email, password)
-          .then(auth => {
-            if(auth){
-              history('/')
-            }
+      const { v4: uuidv4 } = require('uuid');
+      const uid = uuidv4();
+
+      var str="csu.fullerton.edu";
+      var arr = email.split("@");
+      
+      if(str === arr[1]){
+          set(ref( database, 'users/' + uid + " + " + Username),{
+            firstandLastName : firstLastName,
+            username : Username
           })
-          .catch(error => alert(error.message))
+          auth
+              .createUserWithEmailAndPassword(email, password)
+              .then(auth => {
+                if(auth){
+                  nav('/')
+                }              
+              })
+              .catch(error => alert(error.message))
+      }
+      else{
+        console.log("THIS IS MY ERROR")
+      }        
     }
-    
+  
   return (
-    <div className="CreateAccount">
+    <div className='createaccount'>
+      <div className='createaccount_container'>
+        <h1>Please enter a CSUF email and Password </h1>
+
         <form>
-            <h5>Username</h5>
+            <h5>Email</h5>
             <input type='text' value = {email} onChange = {e => setEmail(e.target.value)}/>
             <h5>Password</h5>
             <input type='password' value = {password} onChange = {e => setPassword(e.target.value)}/>
             <br/>
-
+            <h5>First and Last Name</h5>
+            <input type='text' value = {firstLastName} onChange = {e => setfirstLastName(e.target.value)}/>
+            <br/>
+            <h5>Username</h5>
+            <input type='text' value = {Username} onChange = {e => setUsername(e.target.value)}/>
+            <br/>
             {/* links "create" button to login page */}
             <button type='submit' onClick={Register}>  Create</button>
 
             <br/>
         </form>
+      </div>
     </div>
   )
 }

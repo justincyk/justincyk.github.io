@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // - added routing to easily navigate throughout website
 //3/14/22 NOTES:
 // - installed: npm i web-vitals --save-dev to fix an error i got upon npm start
+// 3/27/22 NOTES:
+// - isntalled: npm install uuid
 
 function App() {
   return (
