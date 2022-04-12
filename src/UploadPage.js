@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStateValue } from './StateProvider'
 import { useNavigate } from "react-router-dom"
+import {firebaseApp} from ".//firebase.js"
 
 
 function UploadPage() {
@@ -18,9 +19,24 @@ function UploadPage() {
         price: event.target.product_price.value,
         description: event.target.product_des.value,
         seller: event.target.product_seller.value,
+        category: event.target.category.value,
       },
     });
-  }
+
+    // Function to save uploaded information into firebase database
+    const saveToFirebase = firebaseApp.firestore();
+    saveToFirebase.collection("items").add({
+      id: Date(),
+      item: {
+        title: event.target.product_title.value,
+        image: event.target.url_image.value,
+        price: event.target.product_price.value,
+        description: event.target.product_des.value,
+        seller: event.target.product_seller.value,
+        category: event.target.category.value,
+      }
+    });
+  };
   return (
     <div className="upload">
 
@@ -37,6 +53,15 @@ function UploadPage() {
             <input type="text" name="product_seller" id="" />
             <p>Price</p>
             <input type="number" name="product_price" id="" />
+            <p>Choose an item Category</p>
+            <select name="category" id="">
+              <option value="book">Book</option>
+              <option value="tech">Tech</option>
+              <option value="clothing">Clothing</option>
+              <option value="exercise">Exercise</option>
+              <option value="collectible">Collectibles</option>
+              <option value="other">Other</option>
+            </select>
           </fieldset>
           <button onClick={navigate("/")} type="submit">Submit</button>
         </form>
