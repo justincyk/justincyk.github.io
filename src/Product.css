@@ -11,6 +11,7 @@
     background-color: white;
     transition: all .1s ease-in-out;
     max-width: 500px;
+    flex: 0 0 auto;
 }
 
 .product_Container:hover {

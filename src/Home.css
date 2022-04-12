@@ -18,6 +18,13 @@
   margin-top: 20px;
   margin-bottom: 10px;
   width: 80%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.home_Row Product:hover {
+  background-color: #777;
 }
 
 .homepage_image {
