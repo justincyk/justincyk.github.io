@@ -27,16 +27,17 @@ function Login() {
 
             <form>
                 <h5>E-mail</h5>
-                <input type='text' value = {email} onChange = {e => setEmail(e.target.value)}/>
+                <input type='text' placeholder='E-mail' value = {email} onChange = {e => setEmail(e.target.value)}/>
 
                 <h5>Password</h5>
-                <input type='password' value = {password} onChange = {e => setPassword(e.target.value)}/>
+                <input type='password' placeholder='Password' value = {password} onChange = {e => setPassword(e.target.value)}/>
                 <br/>
-                <button type='submit' onClick={signIn}>Sign In</button>
+                <button type='submit' onClick={signIn} className='loginpage_button'>Sign In</button>
                 <br/>
+                <p>Or</p>
                 {/* links create account button to create account page */}
                 <Link to = "/create_account">
-                  <button>Create account</button>
+                  <button className='loginpage_button'>Create Account</button>
                 </Link>
 
             </form>
@@ -45,7 +46,7 @@ function Login() {
                 test text
             </p>
             <Link to ="/">
-              <button> home </button>
+              <button className='loginpage_button'> Home </button>
             </Link>
 
         </div>

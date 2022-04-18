@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import './CreateAccount.css'
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "./firebase";
@@ -25,11 +26,13 @@ function CreateAccount() {
     
   return (
     <div className="CreateAccount">
+      <div className='CreateAccount_Container'>
+      <h1>Create Account</h1>
         <form>
-            <h5>Username</h5>
-            <input type='text' value = {email} onChange = {e => setEmail(e.target.value)}/>
+            <h5>Email</h5>
+            <input type='text' placeholder='E-mail' value = {email} onChange = {e => setEmail(e.target.value)}/>
             <h5>Password</h5>
-            <input type='password' value = {password} onChange = {e => setPassword(e.target.value)}/>
+            <input type='password' placeholder='Password' value = {password} onChange = {e => setPassword(e.target.value)}/>
             <br/>
 
             {/* links "create" button to login page */}
@@ -37,6 +40,7 @@ function CreateAccount() {
 
             <br/>
         </form>
+      </div>
     </div>
   )
 }
