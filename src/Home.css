@@ -1,4 +1,6 @@
 .home_Container {
+  position: absolute;
+  padding: 0;
   display: flex;
   background-color: rgb(241, 241, 241);
   flex-direction: column;
@@ -6,6 +8,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow-y: hidden;
 }
 
 .home_Row {

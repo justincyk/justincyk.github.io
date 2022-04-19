@@ -2,6 +2,7 @@ import React from 'react'
 import { useStateValue } from './StateProvider'
 import { useNavigate } from "react-router-dom"
 import {firebaseApp} from ".//firebase.js"
+import './UploadPage.css'
 
 
 function UploadPage() {
@@ -43,17 +44,18 @@ function UploadPage() {
       <div className="upload__container">
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <p>Image Url: </p>
+            <h1>Upload an Item</h1>
+            <p>Image Url:</p>
             <input type="url" name="url_image" id="" />
-            <p>Product Title</p>
+            <p>Product Title:</p>
             <input type="text" name="product_title" id="" />
-            <p>Product Description</p>
+            <p>Product Description:</p>
             <input type="text" name="product_des" id="" />
-            <p>Seller Name</p>
+            <p>Seller Name:</p>
             <input type="text" name="product_seller" id="" />
-            <p>Price</p>
+            <p>Price:</p>
             <input type="number" name="product_price" id="" />
-            <p>Choose an item Category</p>
+            <p>Choose an item Category:</p>
             <select name="category" id="">
               <option value="book">Book</option>
               <option value="tech">Tech</option>
