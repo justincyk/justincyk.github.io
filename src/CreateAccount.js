@@ -5,17 +5,22 @@ import { auth } from "./firebase";
 import './CreateAccount.css'
 import firebase from "firebase/compat/app";
 import database from "firebase/compat/app";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, update } from "firebase/database";
 import { v4 as uuidv4 } from 'uuid';
 import { createCustomToken } from "firebase/auth";
+import { firebaseApp } from "./firebase";
 
+var userid;
+var id1;
+var fnl;
+  
 function CreateAccount() {
 
     const nav = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstLastName, setfirstLastName] = useState('');
-    const [Username, setUsername] = useState('');  
+    const [Username, setUsername] = useState('');
 
     const database = getDatabase();   
   
@@ -27,8 +32,29 @@ function CreateAccount() {
 
       var str="csu.fullerton.edu";
       var arr = email.split("@");
+
+      userid = "users/" + uid + " + " + Username;
+      
+      id1 = uid+"+"+Username;
+
+      fnl = firstLastName;
+
+      console.log(userid)
       
       if(str === arr[1]){
+          const saveToFirebase = firebaseApp.firestore();
+
+          saveToFirebase.collection("profile_db").doc(id1).set({
+          id:Date(),
+          Profile: {
+              ID: "",
+              BIO: "",
+              YEAR: "",
+              GENDER: "",
+              INFO: "",
+          }
+          });
+
           set(ref( database, 'users/' + uid + " + " + Username),{
             firstandLastName : firstLastName,
             username : Username
@@ -44,7 +70,8 @@ function CreateAccount() {
       }
       else{
         console.log("THIS IS MY ERROR")
-      }        
+      }   
+      
     }
   
   return (
@@ -71,7 +98,9 @@ function CreateAccount() {
         </form>
       </div>
     </div>
+    
   )
 }
 
+export {userid, id1, fnl}
 export default CreateAccount

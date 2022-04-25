@@ -1,8 +1,12 @@
 import React from 'react'
 import "./Home.css"
 import Product from "./Product"
+import { useStateValue } from './StateProvider'
+
 
 function Home(){
+    const [{basket, user}, dispatch] = useStateValue();
+
     return(
         <div className='home_Container'>
             <div className="homepage_image">
@@ -46,7 +50,17 @@ function Home(){
                 <Product title='Charzard Card' price={1500} image='https://i.ebayimg.com/images/g/BlUAAOSw0lxflHfh/s-l400.jpg' description={"Pristine 10 Charzard Card"} seller={"Blaze"}/>
             </div>
 
-
+            <div className='home_Row'>
+              {basket.map(item => (
+                <Product
+                  title={item.title}
+                  image={item.image}
+                  price={item.price}
+                  description={item.description}
+                  seller={item.seller}
+                />
+              ))}
+            </div>
 
         </div>
 

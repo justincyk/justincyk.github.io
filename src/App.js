@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './App.css';
 import Login from "./Login";
 import Header from "./Header";
 import Home from "./Home";
+import Upload from "./UploadPage"
+import Profile from "./Profile"
 import CreateAccount from "./CreateAccount";
+import Edit_Profile from "./Edit_Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {auth} from "./firebase"
+import { useStateValue } from "./StateProvider";
 
 
 // 3/9/22 NOTES:
@@ -17,16 +22,45 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // - isntalled: npm install uuid
 
 function App() {
+
+  const [{},dispatch] = useStateValue();
+
+  useEffect(() => {
+    // will only run once when the app component loads...
+    auth.onAuthStateChanged(authUser => {
+      console.log('THE USER IS >>> ', authUser);
+
+      if (authUser){
+        // the user just logged in / the user was logged in
+
+        dispatch({
+          type: 'SET_USER',
+          user: authUser
+        })
+      } else {
+        // the user is logged out
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+  }, [])
+
   return (
        // BEM
     <Router>
        <div className="app">
          {/* Makes it so Header renders in each page regardless of location */}
+           <Header/>
            <Routes>
              {/* Different pages based on the path. '/' is the base */}
-             <Route path="/" element={[<Header/>,<Home/>]}/>
+             <Route path="/" element={[<Home/>]}/>
              <Route path="/login" element={[<Login/>]}/>
              <Route path="/create_account" element={[<CreateAccount/>]}/>
+             <Route path="/upload_page" element={[<Upload/>]}/>
+             <Route path="/profile_page" element={[<Profile/>]}/>
+             <Route path="/edit_profile" element={[<Edit_Profile/>]}/>
            </Routes>
        </div>
      </Router>
