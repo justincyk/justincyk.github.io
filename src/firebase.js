@@ -32,4 +32,4 @@ const auth  = firebase.auth();
 const database = firebase.database();
 const ref = firebase.firestore().collection("developers")
 
-export { db, auth, database, ref, firebaseApp };
+export { db, auth, firebaseApp };

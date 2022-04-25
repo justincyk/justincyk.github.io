@@ -1,4 +1,6 @@
 .home_Container {
+  position: absolute;
+  padding: 0;
   display: flex;
   background-color: rgb(241, 241, 241);
   flex-direction: column;
@@ -6,6 +8,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow-y: hidden;
 }
 
 .home_Row {
@@ -18,6 +21,13 @@
   margin-top: 20px;
   margin-bottom: 10px;
   width: 80%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.home_Row Product:hover {
+  background-color: #777;
 }
 
 .homepage_image {
