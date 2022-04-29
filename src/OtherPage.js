@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import ProductPages from "./ProductPages"
 
 function OtherPage() {
-  // set up the items and get the function getITems to retrieve the items from the database and set it equal to items array
+  // set up the items and get the function getItems to retrieve the items from the database and set it equal to items array
   const [items, setItems] = useState([]);
 
     // function to retrieve items from firebase database
@@ -21,7 +21,7 @@ function OtherPage() {
     });
   }
 
-  // function to update homepage every time an item is uploaded
+  // function to update others page every time an item is uploaded
   useEffect(()=>{
     getItems();
   }, [])
