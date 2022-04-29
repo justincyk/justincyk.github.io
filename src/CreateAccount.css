@@ -1,61 +1,48 @@
-.login {
+.CreateAccount {
   background-color: rgb(241, 241, 241);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-    
 }
 
-.login_container{
-  display: flex;   
+.CreateAccount_Container {
+  display: flex;
   align-items: center;
   flex-direction: column;
   padding: 70px;
   margin-top: 5%;
+  width: 15%;
   border-radius: 10px;
   border: 5px solid #00274c;
   background-color: #00274c;
-  
-  
 }
 
-.login_container > h1 {
+.CreateAccount_Container > h1 {
   color: white;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
-.login_container > form > h5 {
+.CreateAccount_Container > form > h5 {
   color: lightgray;
   margin-bottom: 5px;
 }
 
-
-.login_container > form > input {
+.CreateAccount_Container > form > input {
   height: 30px;
   margin-bottom: 10px;
   width: 100%;
   text-indent: 5%;
-  border: 2px solid white ;
+  border: 2px solid white;
   border-radius: 15px;
 }
 
-.login_container > form > input::placeholder {
-  color: gray;
-}
-
-.loginpage_button{
+.CreateAccount_Container > form > button {
   width: 120px;
   height: 35px;
   margin-top: 10px;
-  border: 2px solid #F58220 ;
+  border: 2px solid #f58220;
   border-radius: 10px;
   background-color: #ffa82e;
-  
-}
-
-.login_container > form > p{
-  padding-top: 5%;
-  color: white;
 }
