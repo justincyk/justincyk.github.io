@@ -4,6 +4,7 @@ import Login from "./Login";
 import Header from "./Header";
 import Home from "./Home";
 import Upload from "./UploadPage"
+import Other from "./OtherPage"
 import CreateAccount from "./CreateAccount";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {auth} from "./firebase"
@@ -55,6 +56,7 @@ function App() {
              <Route path="/login" element={[<Login/>]}/>
              <Route path="/create_account" element={[<CreateAccount/>]}/>
              <Route path="/upload_page" element={[<Upload/>]}/>
+             <Route path="/other_page" element={[<Other/>]}/>
            </Routes>
        </div>
      </Router>
