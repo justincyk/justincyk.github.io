@@ -81,7 +81,9 @@ function Home(){
               ))}
             </div>
 
-            <span className='home_Tag'><h2>Exercise Gear</h2></span>
+            <Link to={'/exercise_gear_page'}>
+              <span className='home_Tag'><h2>Exercise Gear</h2></span>
+            </Link>
             <div className='home_Row'>
                 <Product title='Indoor Cycling Bike' price={120} image='https://i5.walmartimages.com/asr/165f664b-afda-44de-8c74-d290e242af3d.fbf7cd213869923719f388f40c11f780.jpeg' description={"Cycling Bike, Like New"} seller={"Antoni"}/>
                 <Product title='Medicine Ball' price={34.99} image='https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQbJGq54T7bU7OMSjTEntupl8WsDwtx5MDu9TMlJyxvf5H2KU-QYTENeyMJ8RfL2QhN5OxTQLLAP9A1UXD25f9pLcCOKHWqCH1kzr5AZ2Q&usqp=CAE' description={"20lb Medicine Ball"} seller={"Amanda"} />
@@ -96,6 +98,21 @@ function Home(){
                 />
               ))}
             </div>
+
+            {/* <Link to={'/exercise_gear_page'}>
+              <span className='home_Tag'><h2>Exercise Gear</h2></span>
+            </Link>
+            <div className='home_Row'>
+              {items.filter((items) => items.item.category === "exercise_gear").map(items => (
+                <Product
+                  title={items.item.title}
+                  image={items.item.image}
+                  price={items.item.price}
+                  description={items.item.description}
+                  seller={items.item.seller}
+                />
+              ))}
+            </div> */}
 
             {/* Change */}
             <span className='home_Tag'><h2>Collectibles</h2></span>
@@ -130,22 +147,6 @@ function Home(){
                 />
               ))}
             </div>
-
-            <Link to={'/exercise_gear_page'}>
-              <span className='home_Tag'><h2>Exercise Gear</h2></span>
-            </Link>
-            <div className='home_Row'>
-              {items.filter((items) => items.item.category === "exercise_gear").map(items => (
-                <Product
-                  title={items.item.title}
-                  image={items.item.image}
-                  price={items.item.price}
-                  description={items.item.description}
-                  seller={items.item.seller}
-                />
-              ))}
-            </div>
-
         </div>
 
 

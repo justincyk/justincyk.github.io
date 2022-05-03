@@ -29,7 +29,7 @@ function ExerciseGear() {
   return (
     <div className="exercise_gear_container">
       <h1>Exercise Gear Items</h1>
-      {/* Gets the other category and displays it on the page */}
+      {/* Gets the exercise gear category and displays it on the page */}
       <div className='exercise_gear'>
               {items.filter((items) => items.item.category === "exercise_gear").map(items => (
                 <ProductPages className = "exercise_gear_items"
