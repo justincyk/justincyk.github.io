@@ -24,7 +24,7 @@ function Login() {
   //     console.error(error);
   // })
 
-  const signIn = e => {
+  const signIn = (e) => {
     e.preventDefault();
 
     var str="csu.fullerton.edu";
@@ -42,10 +42,18 @@ function Login() {
     }
   }
   return (
-    <div className='login'>
+    <div className="login">
+      <div className="login_container">
+        <h1>Sign-In</h1>
 
-        <div className='login_container'>
-            <h1>Sign-In</h1>
+        <form>
+          <h5>E-mail</h5>
+          <input
+            type="text"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
             <form>
                 <h5>E-mail</h5>
@@ -68,9 +76,9 @@ function Login() {
             </p>
             <Link to ="/">
               <button className='loginpage_button'> Home </button>
-            </Link>
-
-        </div>
+            </Link> 
+          </form>
+      </div>
     </div>
 
   )
@@ -78,7 +86,7 @@ function Login() {
 
 
 
-export default Login
+export default Login;
 
 //things to do
 // - button to create account

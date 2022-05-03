@@ -6,7 +6,6 @@ import { useStateValue } from './StateProvider';
 import {auth} from './firebase';
 import Upload from './UploadPage'
 
-
 function Header(){
 
   const [{user}, dispatch] = useStateValue();

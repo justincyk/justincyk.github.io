@@ -11,6 +11,7 @@ import Edit_Profile from "./Edit_Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {auth} from "./firebase"
 import { useStateValue } from "./StateProvider";
+import OtherPage from "./OtherPage";
 
 
 // 3/9/22 NOTES:
@@ -62,7 +63,8 @@ function App() {
              <Route path="/upload_page" element={[<Upload/>]}/>
              <Route path="/profile_page" element={[<Profile/>]}/>
              <Route path="/edit_profile" element={[<Edit_Profile/>]}/>
-             <Route path="/other_page" element={[<ExerciseGear/>]}/>
+             <Route path="/other_page" element={[<OtherPage/>]}/>
+             <Route path="/exercise_gear_page" element={[<ExerciseGear/>]}/>
            </Routes>
        </div>
      </Router>
