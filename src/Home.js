@@ -35,8 +35,6 @@ function Home(){
 
             <span className='home_Tag'><h2>Books</h2></span>
             <div className='home_Row'>
-                <Product title="Crime and Punishment" price={9.99} image='https://u-mercari-images.mercdn.net/photos/m83702213756_1.jpg?width=1024&height=1024&format=pjpg&auto=webp&fit=crop&_=1643496851' description={"Book about Crime"} seller={"Bob"}/>
-                <Product title="Narnia" price={17.96} image='https://images-na.ssl-images-amazon.com/images/I/51WbmTRk-4L._SX331_BO1,204,203,200_.jpg' description={"Book about a lion and friends"} seller={"Jake"}/>
                 {items.filter((items) => items.item.category === "book").map(items => (
                 <Product
                   title={items.item.title}
