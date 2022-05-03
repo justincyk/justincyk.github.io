@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import "./OtherPage.css"
+import "./ExerciseGear.css"
 import { useStateValue } from './StateProvider'
 import { firebaseApp } from './firebase'
 import { Link } from "react-router-dom";
-// import ProductPages from "./ProductPages"
+import ProductPages from "./ProductPages"
 
-function OtherPage() {
+function ExerciseGear() {
   // set up the items and get the function getItems to retrieve the items from the database and set it equal to items array
   const [items, setItems] = useState([]);
 
@@ -21,7 +21,7 @@ function OtherPage() {
     });
   }
 
-  // function to update others page every time an item is uploaded
+  // function to update exercise page every time an item is uploaded
   useEffect(()=>{
     getItems();
   }, [])
@@ -46,4 +46,4 @@ function OtherPage() {
   )
 }
 
-export default OtherPage
+export default ExerciseGear

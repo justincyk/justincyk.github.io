@@ -131,6 +131,21 @@ function Home(){
               ))}
             </div>
 
+            <Link to={'/exercise_gear_page'}>
+              <span className='home_Tag'><h2>Exercise Gear</h2></span>
+            </Link>
+            <div className='home_Row'>
+              {items.filter((items) => items.item.category === "exercise_gear").map(items => (
+                <Product
+                  title={items.item.title}
+                  image={items.item.image}
+                  price={items.item.price}
+                  description={items.item.description}
+                  seller={items.item.seller}
+                />
+              ))}
+            </div>
+
         </div>
 
 
