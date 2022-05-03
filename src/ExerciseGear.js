@@ -31,7 +31,7 @@ function ExerciseGear() {
       <h1>Exercise Gear Items</h1>
       {/* Gets the exercise gear category and displays it on the page */}
       <div className='exercise_gear'>
-              {items.filter((items) => items.item.category === "exercise_gear").map(items => (
+              {items.filter((items) => items.item.category === "exercise").map(items => (
                 <ProductPages className = "exercise_gear_items"
                   title={items.item.title}
                   image={items.item.image}
