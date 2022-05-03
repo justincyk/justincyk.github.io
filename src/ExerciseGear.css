@@ -1,0 +1,18 @@
+ .exercise_gear_items{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid;
+    margin-bottom: 10px;
+    width: 80%;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  
+  .product_Container {
+    margin: 0 0;
+    padding: 0 0;
+  }

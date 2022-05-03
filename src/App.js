@@ -5,6 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Upload from "./UploadPage"
 import Profile from "./Profile"
+import ExerciseGear from "./ExerciseGear"
 import CreateAccount from "./CreateAccount";
 import Edit_Profile from "./Edit_Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -61,6 +62,7 @@ function App() {
              <Route path="/upload_page" element={[<Upload/>]}/>
              <Route path="/profile_page" element={[<Profile/>]}/>
              <Route path="/edit_profile" element={[<Edit_Profile/>]}/>
+             <Route path="/other_page" element={[<ExerciseGear/>]}/>
            </Routes>
        </div>
      </Router>
