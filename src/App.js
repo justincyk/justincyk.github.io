@@ -4,7 +4,12 @@ import Login from "./Login";
 import Header from "./Header";
 import Home from "./Home";
 import Upload from "./UploadPage"
-import Other from "./OtherPage"
+import Books from "./Book";
+import Tech from "./Tech"
+import Clothing from "./Clothing"
+import Exercise from "./Exercise"
+import Other from "./Other";
+import Collectibles from "./Collectibles";
 import CreateAccount from "./CreateAccount";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {auth} from "./firebase"
@@ -42,7 +47,7 @@ function App() {
         })
       }
     })
-  }, [])
+  }, [dispatch])
 
   return (
        // BEM
@@ -56,7 +61,12 @@ function App() {
              <Route path="/login" element={[<Login/>]}/>
              <Route path="/create_account" element={[<CreateAccount/>]}/>
              <Route path="/upload_page" element={[<Upload/>]}/>
-             <Route path="/other_page" element={[<Other/>]}/>
+             <Route path="/Books" element={[<Books/>]} />
+             <Route path="/Tech" element={[<Tech/>]} />
+             <Route path="/Clothing" element={[<Clothing/>]} />
+             <Route path="/Exercise" element={[<Exercise/>]} />
+             <Route path="/Collectibles" element={[<Collectibles/>]} />
+             <Route path="/Other" element={[<Other/>]} />
            </Routes>
        </div>
      </Router>
