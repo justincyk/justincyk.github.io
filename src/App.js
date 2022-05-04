@@ -11,6 +11,7 @@ import Exercise from "./Exercise"
 import Other from "./Other";
 import Collectibles from "./Collectibles";
 import CreateAccount from "./CreateAccount";
+import Profile from "./Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {auth} from "./firebase"
 import { useStateValue } from "./StateProvider";
@@ -60,6 +61,7 @@ function App() {
              <Route path="/" element={[<Home/>]}/>
              <Route path="/login" element={[<Login/>]}/>
              <Route path="/create_account" element={[<CreateAccount/>]}/>
+             <Route path="/profile" element={[<Profile/>]}/>
              <Route path="/upload_page" element={[<Upload/>]}/>
              <Route path="/Books" element={[<Books/>]} />
              <Route path="/Tech" element={[<Tech/>]} />

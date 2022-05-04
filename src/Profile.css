@@ -1,0 +1,26 @@
+body {
+    background: #ffffff;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #4ca2cd, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #4ca2cd, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #000;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.profile_img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 40%;
+}
+
+.student-profile{
+    text-align: center;
+}

@@ -32,10 +32,11 @@ function Header(){
                   </div>
                 </Link>
 
-
+                <Link to='/profile'>
                 <div className="header_option">
                     <span className="profile">{user ? "My Profile" : ""}</span>
                 </div>
+                </Link>
 
                 <div className="header_option">
                     <Link to={'/upload_page'}>
